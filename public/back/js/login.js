@@ -73,6 +73,9 @@
                     //console.log('hehe');
                     $('form').data('bootstrapValidator').updateStatus('password','INVALID','callback')
                 }
+                if(info.success){
+                    location.href='index.html';
+                }
             }
         })
     });
