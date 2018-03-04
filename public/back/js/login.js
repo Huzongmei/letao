@@ -50,10 +50,7 @@
     });
 
 
-    //点击重置按钮 表单校验信息隐藏
-    $('[type="reset"]').on('click',function(){
-        $('form').data('bootstrapValidator').resetForm();
-    });
+
 
     //给表单注册一个校验成功的事件，当校验成功时，阻止表单的默认提交
     $('form').on('success.form.bv',function(e){
@@ -61,22 +58,28 @@
 
         //ajax请求后台验证用户登录
         $.ajax({
-            type:'POST',
+            type:'post',
             url:'/employee/employeeLogin',
             data: $('form').serialize(),
+            dataType:'json',
             success:function(info){
                 //console.log(info);
                 if(info.error===1000){
-                    console.log('haha');
-                    $('form').data('bootstrapValidator').updateStatus('username','INVALID ','callback')
+                    //console.log('haha');
+                    $('form').data('bootstrapValidator').updateStatus('username','INVALID','callback')
 
                 }
                 if(info.error===1001){
-                    console.log('hehe');
-                    $('form').data('bootstrapValidator').updateStatus('password','INVALID ','callback')
+                    //console.log('hehe');
+                    $('form').data('bootstrapValidator').updateStatus('password','INVALID','callback')
                 }
             }
         })
-    })
+    });
+
+    //点击重置按钮 表单校验信息隐藏
+    $('[type="reset"]').on('click',function(){
+        $('form').data('bootstrapValidator').resetForm();
+    });
 
 })();
