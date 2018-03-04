@@ -19,6 +19,9 @@
                         min: 3,
                         max: 6,
                         message: '用户名长度必须在3到6位之间'
+                    },
+                    callback:{
+                        message:'用户名或者密码错误'
                     }
                 }
             },
@@ -31,6 +34,9 @@
                         min: 6,
                         max: 12,
                         message: '用户密码长度必须在3到6位之间'
+                    },
+                    callback:{
+                        message:'用户名或者密码错误'
                     }
                 }
             }
@@ -59,7 +65,16 @@
             url:'/employee/employeeLogin',
             data: $('form').serialize(),
             success:function(info){
-                console.log(info);
+                //console.log(info);
+                if(info.error===1000){
+                    console.log('haha');
+                    $('form').data('bootstrapValidator').updateStatus('username','INVALID ','callback')
+
+                }
+                if(info.error===1001){
+                    console.log('hehe');
+                    $('form').data('bootstrapValidator').updateStatus('password','INVALID ','callback')
+                }
             }
         })
     })
