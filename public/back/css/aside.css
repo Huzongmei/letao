@@ -1,4 +1,3 @@
-@charset "UTF-8";
 a,
 a:link,
 a:hover,
@@ -7,16 +6,11 @@ a:visited {
   color: #fff;
   text-decoration: none;
 }
-/*侧边栏样式*/
 .lt_aside {
   width: 180px;
   height: 100%;
   background-color: #222d32;
   color: #fff;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 1s;
 }
 .lt_aside .logo {
   display: block;
@@ -59,35 +53,4 @@ a:visited {
 .lt_aside .nav a.now {
   background-color: #1d1f21;
   border-left-color: #069;
-}
-.lt_aside.now {
-  margin-left: -180px;
-}
-body,
-html {
-  height: 100%;
-}
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-/*������*/
-.lt_main {
-  width: 100%;
-  padding-left: 180px;
-  transition: all 1s;
-}
-.lt_main .lt_topBar {
-  height: 50px;
-  background-color: #3c8dbc;
-  line-height: 50px;
-  padding: 0 20px;
-  margin-bottom: 30px;
-}
-.lt_main .breadcrumb a {
-  color: #3c8dbc;
-}
-.lt_main.now {
-  padding-left: 0;
 }
