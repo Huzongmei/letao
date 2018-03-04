@@ -85,4 +85,9 @@
         $('form').data('bootstrapValidator').resetForm();
     });
 
+    //点击重置按钮 表单校验信息隐藏
+    $('[type="reset"]').on('click',function(){
+        $('form').data('bootstrapValidator').resetForm();
+    });
+
 })();
