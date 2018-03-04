@@ -50,10 +50,7 @@
     });
 
 
-    //点击重置按钮 表单校验信息隐藏
-    $('[type="reset"]').on('click',function(){
-        $('form').data('bootstrapValidator').resetForm();
-    });
+
 
     //给表单注册一个校验成功的事件，当校验成功时，阻止表单的默认提交
     $('form').on('success.form.bv',function(e){
@@ -78,5 +75,10 @@
             }
         })
     })
+
+    //点击重置按钮 表单校验信息隐藏
+    $('[type="reset"]').on('click',function(){
+        $('form').data('bootstrapValidator').resetForm();
+    });
 
 })();

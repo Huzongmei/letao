@@ -1,11 +1,13 @@
 /**
  * Created by Admin on 2018/3/2.
  */
-;(function(){
-    var lis=$('.nav>ul>li');
-    lis.forEach(function(v,i){
-        lis[i].onclick=function(){
-            alert('haha');
-        }
+$(function(){
+    //给所有需要请求数据的页面添加进度条
+    $(document).ajaxStart(function(){
+        NProgress.start();
+    });
+    $(document).ajaxStop(function(){
+        NProgress.done();
     })
-})();
+});
+
