@@ -23,9 +23,9 @@ img {
   position: relative;
   padding-top: 45px;
   padding-bottom: 55px;
-  /*澶撮儴*/
-  /*涓讳綋鍐呭鍖�*/
-  /*搴曢儴*/
+  /*头部*/
+  /*主体内容区*/
+  /*底部*/
 }
 .lt_container .lt_header {
   height: 45px;
@@ -97,12 +97,12 @@ img {
 .lt_container .lt_footer ul li a.now {
   color: orangered;
 }
-/*涓讳綋鍖哄垪琛�*/
+/*主体区列表*/
 .lt_proList {
   width: 100%;
   padding: 10px;
-  /*nav妯″潡*/
-  /*鍒楄〃妯″潡*/
+  /*nav模块*/
+  /*列表模块*/
 }
 .lt_proList .lt_nav li {
   width: 33.33%;
