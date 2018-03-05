@@ -56,14 +56,14 @@ $(function(){
 
 
     //如果不是登录页，发送ajax请求，查询管理员是否登录
-    if(location.href.indexOf('login.html')){
+    if(location.href.indexOf('login.html')==-1){
         $.ajax({
             type:'GET',
             url:'/employee/checkRootLogin',
             dataType:'json',
             success:function(info){
                 //console.log(info);
-                if(!info.success){
+                if(info.error==400){
                     location.href='login.html'
                 }
             }
