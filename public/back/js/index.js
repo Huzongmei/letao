@@ -2,24 +2,78 @@
  * Created by Admin on 2018/3/4.
  */
 $(function(){
-    // ³õÊ¼»¯echartsÊµÀı
-    var myChart = echarts.init(document.getElementById('main'));
 
-    // Ö¸¶¨Í¼±íµÄÅäÖÃÏîºÍÊı¾İ
-    option = {
+
+    // åŸºäºå‡†å¤‡å¥½çš„domï¼Œåˆå§‹åŒ–echartså®ä¾‹
+    var myChart1 = echarts.init(document.getElementById('main1'));
+
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    // æŒ‡å®šå›¾è¡¨çš„é…ç½®é¡¹å’Œæ•°æ®
+
+    // æŸ±çŠ¶å›¾
+    option1 = {
+        title: {
+            text: '2017å¹´æ³¨å†Œäººæ•°'
+        },
+        tooltip: {},
+        legend: {
+            data:['äººæ•°']
+        },
         xAxis: {
             type: 'category',
-            data: ['Ò»ÔÂ', '¶şÔÂ', 'ÈıÔÂ', 'ËÄÔÂ', 'ÎåÔÂ', 'ÁùÔÂ', 'Sun']
+            data: ['ä¸€æœˆ', 'äºŒæœˆ', 'ä¸‰æœˆ', 'å››æœˆ', 'äº”æœˆ', 'å…­æœˆ']
         },
         yAxis: {
             type: 'value'
         },
         series: [{
-            data: [120, 200, 150, 80, 70, 110, 130],
+            name: 'äººæ•°',
+            data: [500, 800, 1700, 2000, 1500, 1200, 2500],
             type: 'bar'
         }]
     };
 
-    // Ê¹ÓÃ¸ÕÖ¸¶¨µÄÅäÖÃÏîºÍÊı¾İÏÔÊ¾Í¼±í¡£
-    myChart.setOption(option);
+    // é¥¼çŠ¶å›¾
+    option2 = {
+        title : {
+            text: 'çƒ­é—¨å“ç‰Œé”€å”®',
+            subtext: '2017å¹´6æœˆ',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['é˜¿è¿ª','æå®','è€å…‹','åŒ¡å¨','æ–°ç™¾ä¼¦']
+        },
+        series : [
+            {
+                name: 'é”€å”®å æ¯”',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'é˜¿è¿ª'},
+                    {value:310, name:'æå®'},
+                    {value:234, name:'è€å…‹'},
+                    {value:135, name:'åŒ¡å¨'},
+                    {value:1548, name:'æ–°ç™¾ä¼¦'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    // ä½¿ç”¨åˆšæŒ‡å®šçš„é…ç½®é¡¹å’Œæ•°æ®æ˜¾ç¤ºå›¾è¡¨ã€‚
+    myChart1.setOption(option1);
+    myChart2.setOption(option2);
 });

@@ -24,6 +24,7 @@ $(function(){
     //二级菜单的显示和隐藏
     $('.category').prev().on('click',function(){
         $(this).next().slideToggle();
+        $(this).toggleClass('now');
     });
 
 
