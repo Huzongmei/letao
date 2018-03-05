@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import "common";
+
+/*侧边导航栏*/
+.lt_aside {
+  width: 90px;
+  float: left;
+  background-color: pink;
+  text-align: center;
+  li {
+    border-bottom: 1px solid red;
+    border-right: 1px solid red;
+    a {
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+    }
+  }
+  li.now {
+    background-color: #fff;
+    border-right: none;
+  }
+
+}
+
+/*右边品牌展示区*/
+.lt_brand {
+  overflow: hidden;
+  li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    img {
+      margin: 0 auto;
+      width: 62px;
+      height: 62px;
+    }
+  }
+  .tips {
+    color: #000;
+    margin-top: 10px;
+    text-indent: 10px;
+    font-size: 14px;
+  }
+}
