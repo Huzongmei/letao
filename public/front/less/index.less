@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@import "common";//公共样式
+
+/*主体区列表*/
+.lt_proList {
+  width: 100%;
+  padding: 10px;
+  /*nav模块*/
+  .lt_nav {;
+    li {
+      width: 33.33%;
+      float: left;
+    }
+  }
+  /*列表模块*/
+  .lt_list {
+    width: 100%;
+    a {
+      display: block;
+      float: left;
+      height: 100%;
+      width: 48%;
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 0 20px;
+      padding-bottom: 20px;
+      .price {
+        color: red;
+      }
+      .oldPrice {
+        text-decoration: line-through;
+      }
+    }
+    a:nth-child(odd) {
+      margin-right: 4%;
+    }
+  }
+}
