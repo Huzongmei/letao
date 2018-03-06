@@ -92,7 +92,6 @@ $(function () {
 
       //设置给img_box中img的src属性
       $(".img_box img").attr("src", data.result.picAddr);
-
       //把图片的地址赋值给brandLogo
       $("[name='brandLogo']").val(data.result.picAddr);
 
