@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>user</title>
+    <title>分类管理</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css"/>
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css"/>
@@ -21,7 +21,7 @@
     <div class="nav">
         <ul>
             <li>
-                <a href="user.html" class="now">
+                <a href="user.html">
                     <span class="glyphicon glyphicon-user"></span>
                     用户管理
                 </a>
@@ -31,9 +31,9 @@
                     <span class="glyphicon glyphicon-list"></span>
                     分类管理
                 </a>
-                <ul class="category">
-                    <li>
-                        <a href="first.html">一级分类</a>
+                <ul class="category" style="display: block">
+                    <li class="now">
+                        <a href="first.html" class="now">一级分类</a>
                     </li>
                     <li>
                         <a href="second.html">二级分类</a>
@@ -61,22 +61,22 @@
         <!--路径导航-->
         <ol class="breadcrumb">
             <li><a href="#">管理系统</a></li>
-            <li class="active">用户管理</li>
+            <li><a href="#">分类管理</a></li>
+            <li class="active">一级分类</li>
         </ol>
 
+        <!--添加分类-->
+        <button class="btn btn-default btn_add" style="margin-bottom: 20px;">添加分类</button>
         <!--表格区-->
         <table class="table table-hover table-bordered text-center">
             <thead>
             <tr>
-                <td width="10%">序号</td>
-                <td width="30%">用户名</td>
-                <td width="30%">手机号</td>
-                <td width="20%">状态</td>
-                <td width="10%">操作</td>
+                <td width="20%">序号</td>
+                <td width="80%">分类名称</td>
             </tr>
             </thead>
             <tbody>
-                <!-- 挖个坑-->
+            <!-- 挖个坑-->
             </tbody>
         </table>
         <!--分页的盒子-->
@@ -107,21 +107,28 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!--禁用、启用模态框-->
-<div class="modal fade" tabindex="-1" id="tbl_modal">
+<!--添加分类模态框-->
+<div class="modal fade" tabindex="-1" id="add_modal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                <h4 class="modal-title">温馨提示</h4>
+                <h4 class="modal-title">添加分类</h4>
             </div>
+
             <div class="modal-body">
-                <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> 你确定要执行此操作吗</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入一级分类的名称
+              ">
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button type="button" class="btn btn-primary btn_confirm">确定</button>
             </div>
+
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -129,19 +136,14 @@
 
 
 <!--table模板引擎-->
-<script id="tpl" type="text/html">
-    {{each rows v i}}
-    <tr>
-        <td>{{(page-1)*size+i+1}}</td>
-        <td>{{v.username}}</td>
-        <td>{{v.mobile}}</td>
-        <td>{{v.isDelete==1?'启用':'禁用'}}</td>
-        <td data-id="{{v.id}}">
-            <button class="btn {{v.isDelete==1?'btn-danger':'btn-success'}} btn-sm btn_stop">{{v.isDelete==1?'禁用':'启用'}}</button>
-        </td>
-    </tr>
-    {{/each}}
-</script>
+<!--<script id="tpl" type="text/html">-->
+    <!--{{each rows v i}}-->
+    <!--<tr>-->
+        <!--<td>{{(page-1)*size+i+1}}</td>-->
+        <!--<td>{{v.username}}</td>-->
+    <!--</tr>-->
+    <!--{{/each}}-->
+<!--</script>-->
 
 </body>
 </html>
@@ -152,5 +154,4 @@
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="js/common.js"></script>
-<script src="js/user.js"></script>
-
+<script src="js/first.js"></script>
