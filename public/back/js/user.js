@@ -24,6 +24,27 @@ $(function(){
                 $("#paginator").bootstrapPaginator({
                     bootstrapMajorVersion:3,//默认是2，如果是bootstrap3版本，这个参数必填
                     currentPage:page,//当前页
+                    //type属性：
+                    // 如果是首页---> first
+                    // 上一页-->prev
+                    // 下一页-->next
+                    // 尾页-->last
+                    // 具体的页码-->page
+                    itemTexts: function (type, page, current) {
+                        switch (type) {
+                            case "first":
+                                return "首页";
+                            case "prev":
+                                return "上一页";
+                            case "next":
+                                return "下一页";
+                            case "last":
+                                return "尾页";
+                            //如果是page，说明就是数字，只需要返回对应的数字即可
+                            default:
+                                return page;
+                        }
+                    },
                     totalPages: Math.ceil(info.total/pageSize),//总页数
                     size:"small",//设置控件的大小，mini, small, normal,large
                     onPageClicked:function(a, b, c,p){
@@ -61,11 +82,12 @@ $(function(){
                 success:function(info){
                     //console.log(info);
                     // 模态框关闭
-                    $('#tbl_modal').modal('hide');
+                    if(info.success){
+                        $('#tbl_modal').modal('hide');
 
-                    // 重新渲染
-                    render();
-
+                        // 重新渲染
+                        render();
+                    }
                 }
             })
         })
