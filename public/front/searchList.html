@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title>乐淘搜索</title>
+    <title>商品列表</title>
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css"/>
-    <link rel="stylesheet" href="./css/search.css"/>
+    <link rel="stylesheet" href="./css/searchList.css"/>
 </head>
 <body>
 <div class="lt_container">
     <!--头部模块-->
     <header class="lt_header">
         <a class="btn_home" href="index.html"><span class="mui-icon mui-icon-back"></span></a>
-        <h3>搜索中心</h3>
+        <h3>商品列表</h3>
     </header>
 
     <!--主体内容区域滚动-->
@@ -27,11 +27,29 @@
                     <button class="mui-btn mui-btn-primary btn_search" type="submit">搜索</button>
                 </div>
 
-                <!--搜索内容区-->
-                <div class="lt_history">
-                   <!--挖个坑-->
+                <div class="search_nav">
+                    <a href="javascript:;">
+                        上架时间
+                        <span class="fa fa-angle-down"></span>
+                    </a>
+                    <a href="javascript:;">
+                        价格
+                        <span class="fa fa-angle-down"></span>
+                    </a>
+                    <a href="javascript:;">
+                        库存
+                        <span class="fa fa-angle-down"></span>
+                    </a>
+                    <a href="javascript:;">
+                        折扣
+                        <span class="fa fa-angle-down"></span>
+                    </a>
                 </div>
 
+                <!--列表模块-->
+                <div class="lt_list mui-clearfix">
+                    <!--挖个坑-->
+                </div>
             </div>
         </div>
     </div>
@@ -68,22 +86,20 @@
 
     <!--模板引擎-->
     <script id="tpl" type="text/html">
-        {{if arr.length == 0}}
-        <p>没有历史记录</p>
+        {{if data.length == 0}}
+        <p>没有更多的商品信息</p>
         {{else}}
-        <div class="history_title">
-            <span>搜索历史</span>
-            <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
-        </div>
-
-        <ul class="history_content">
-            {{each arr v i}}
-            <li data-id="{{i}}">
-                <a href="">{{v}}</a>
-                <span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span>
-            </li>
-            {{/each}}
-        </ul>
+        {{each data v i}}
+        <a href="javascript:;">
+            <img src="{{v.pic[0].picAddr}}" alt=""/>
+            <p class="mui-ellipsis-2">{{v.proName}}</p>
+            <p>
+                <span class="price">&yen;{{v.price}}</span>
+                <span class="oldPrice">&yen;{{v.oldPrice}}</span>
+            </p>
+            <button class="mui-btn-primary">立即购买</button>
+        </a>
+        {{/each}}
         {{/if}}
     </script>
 </div>
@@ -93,4 +109,4 @@
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/mui/js/mui.min.js"></script>
 <script src="js/common.js"></script>
-<script src="js/search.js"></script>
+<script src="js/searchList.js"></script>

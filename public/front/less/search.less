@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@import "common";
+
+.lt_search {
+  padding: 10px;
+  position: relative;
+  input {
+    height: 34px;
+    font-size: 12px;
+    margin: 0;
+    border: 1px solid #007aff;
+    border-radius: 5px;
+  }
+  button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.lt_history {
+  padding: 10px;
+  font-size: 12px;
+  .history_title {
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    .btn_empty {
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+  .history_content {
+    border: 1px dashed red;
+    li {
+      height: 30px;
+      line-height: 30px;
+      border-top: 1px dashed red;
+      text-indent: 10px;
+      span {
+        cursor: pointer;
+      }
+    }
+    li:first-child {
+      border-top: none;
+    }
+  }
+}
