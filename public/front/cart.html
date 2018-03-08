@@ -73,8 +73,8 @@
     {{each list v i}}
     <li class="mui-table-view-cell mui-transitioning">
         <div class="mui-slider-right mui-disabled">
-            <a class="mui-btn mui-btn-primary mui-icon mui-icon-compose" style="transform: translate(0px, 0px);"></a>
-            <a class="mui-btn mui-btn-danger mui-icon mui-icon-trash" style="transform: translate(-90px, 0px);"></a>
+            <a data-id="{{v.id}}" class="mui-btn mui-btn-primary mui-icon mui-icon-compose" style="transform: translate(0px, 0px);"></a>
+            <a class="mui-btn mui-btn-danger mui-icon mui-icon-trash btn_delete" style="transform: translate(-90px, 0px);"></a>
         </div>
         <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
             <div class="mui-table-cell">
@@ -100,6 +100,7 @@
     </li>
     {{/each}}
 </script>
+
 </body>
 </html>
 <script src="lib/zepto/zepto.min.js"></script>
