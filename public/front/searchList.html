@@ -50,6 +50,7 @@
                 <div class="lt_list mui-clearfix">
                     <!--挖个坑-->
                 </div>
+
             </div>
         </div>
     </div>
@@ -90,7 +91,7 @@
         <p>没有更多的商品信息</p>
         {{else}}
         {{each data v i}}
-        <a href="javascript:;">
+        <a href="product.html?productId={{v.id}}">
             <img src="{{v.pic[0].picAddr}}" alt=""/>
             <p class="mui-ellipsis-2">{{v.proName}}</p>
             <p>

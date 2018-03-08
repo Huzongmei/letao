@@ -38,7 +38,7 @@ $(function(){
         obj.proName=value;
         render();
     });
-
+''
     //给search_nav下的a注册点击事件
     $('.search_nav a[data-type]').on('click',function(){
         //修改样式 字体颜色 小图标 排他
