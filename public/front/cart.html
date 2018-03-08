@@ -21,36 +21,9 @@
     <div class="lt_main">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                    <li class="mui-table-view-cell mui-transitioning">
-                        <div class="mui-slider-right mui-disabled">
-                            <a class="mui-btn mui-btn-primary mui-icon mui-icon-compose" style="transform: translate(0px, 0px);"></a>
-                            <a class="mui-btn mui-btn-danger mui-icon mui-icon-trash" style="transform: translate(-90px, 0px);"></a>
-                        </div>
-                        <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
-                            <div class="mui-table-cell">
-                                <div class="cart_img mui-pull-left">
-                                    <img src="./images/none.png" alt=""/>
-                                </div>
+               <!--挖个坑-->
+                <ul class="mui-table-view lt_content">
 
-                                <div class="cart_info">
-                                    <p class="proName">匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
-                                    <p>
-                                        <span class="price">&yen;588</span>
-                                        <span class="oldPrice">&yen;688</span>
-                                    </p>
-                                    <p class="size">
-                                        鞋码：<span>35</span>
-                                        <span class="num mui-pull-right">1双</span>
-                                    </p>
-                                </div>
-
-                                <input class="ck" type="checkbox"/>
-                            </div>
-                        </div>
-                    </li>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -93,9 +66,44 @@
             </li>
         </ul>
     </footer>
+
 </div>
+<!--列表模板引擎-->
+<script id="tpl" type="text/html">
+    {{each list v i}}
+    <li class="mui-table-view-cell mui-transitioning">
+        <div class="mui-slider-right mui-disabled">
+            <a class="mui-btn mui-btn-primary mui-icon mui-icon-compose" style="transform: translate(0px, 0px);"></a>
+            <a class="mui-btn mui-btn-danger mui-icon mui-icon-trash" style="transform: translate(-90px, 0px);"></a>
+        </div>
+        <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
+            <div class="mui-table-cell">
+                <div class="cart_img mui-pull-left">
+                    <img src="{{v.pic[0].picAddr}}" alt=""/>
+                </div>
+
+                <div class="cart_info">
+                    <p class="proName">{{v.proName}}</p>
+                    <p>
+                        <span class="price">&yen;{{v.price}}</span>
+                        <span class="oldPrice">&yen;{{v.oldPrice}}</span>
+                    </p>
+                    <p class="size">
+                        鞋码：<span>{{v.size}}</span>
+                        <span class="num mui-pull-right">{{v.num}}双</span>
+                    </p>
+                </div>
+
+                <input class="ck" type="checkbox"/>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
 </body>
 </html>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/mui/js/mui.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/cart.js"></script>
