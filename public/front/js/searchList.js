@@ -29,7 +29,12 @@ $(function(){
     //列表渲染
     render();
 
-
+    //希望这个函数无论如何都能返回一个数组，如果没有记录，返回一个[]
+    function getHistory() {
+        var history = localStorage.getItem("search_list") || '[]';
+        var arr = JSON.parse(history);
+        return arr;
+    }
     //点击搜索 重新渲染页面
     $('.btn_search').on('click',function(){
         //获取input输入的value值
@@ -37,8 +42,25 @@ $(function(){
         //把value值拼接到地址栏后 重新渲染
         obj.proName=value;
         render();
+
+        var arr = getHistory();
+        //确认输入框不为空
+        if(value.trim()==0){
+            mui.toast('请输入搜索关键字');
+        }
+        //渲染列表只显示10条最近添加历史记录
+        if(arr.length>10){
+            arr.pop();
+        }
+        //如果历史记录已经有相同的记录，删除此前的记录，并添加最新的记录
+        if(arr.indexOf(value)!=-1){
+            arr.splice(arr.indexOf(value),1);
+        }
+        arr.splice(0,0,value);
+        //console.log(arr);
+        localStorage.setItem('search_list',JSON.stringify(arr));
     });
-''
+
     //给search_nav下的a注册点击事件
     $('.search_nav a[data-type]').on('click',function(){
         //修改样式 字体颜色 小图标 排他
