@@ -15,10 +15,28 @@
     <header class="lt_header">
         <a class="btn_home" href="index.html"><span class="fa fa-home"></span></a>
         <h3>会员中心</h3>
-        <a class="btn_search" href="search.html"><span class="fa fa-search"></span></a>
     </header>
 
+    <div class="lt_main">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media userinfo">
+                <!--挖个坑-->
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">账号与安全</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="cart.html" class="mui-navigate-right">我的购物车</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">收获地址管理</a>
+            </li>
+        </ul>
 
+        <div class="logout_wrap">
+            <a class="btn_logout mui-btn mui-block">退出</a>
+        </div>
+    </div>
 
     <!--底部模块-->
     <footer class="lt_footer">
@@ -36,22 +54,36 @@
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="cart.html">
                     <span class="fa fa-shopping-cart"></span>
                     <p>购物车</p>
                 </a>
             </li>
             <li>
-                <a class="now" href="index.html">
+                <a class="now" href="user.html">
                     <span class="fa fa-user"></span>
                     <p  class="now">会员中心</p>
                 </a>
             </li>
         </ul>
     </footer>
+
+    <script type="text/html" id="tpl">
+        <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;" class="">
+                <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+                <div class="mui-media-body">
+                {{username}}
+                <p class="mui-ellipsis">绑定手机：{{mobile}}</p>
+        </div>
+        </a>
+        </li>
+    </script>
 </div>
 </body>
 </html>
 <script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/mui/js/mui.min.js"></script>
 <script src="js/common.js"></script>
+<script src="js/user.js"></script>
