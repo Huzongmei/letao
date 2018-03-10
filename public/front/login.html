@@ -2,9 +2,68 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>会员中心</title>
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
 </head>
 <body>
+<div class="lt_container">
+    <!--头部模块-->
+    <header class="lt_header">
+        <a class="btn_home" href="index.html"><span class="fa fa-home"></span></a>
+        <h3>会员中心</h3>
+        <a class="btn_search" href="search.html"><span class="fa fa-search"></span></a>
+    </header>
 
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <label>用户名</label>
+            <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+        </div>
+        <div class="mui-input-row">
+            <label>密码</label>
+            <input type="password" class="mui-input-password" placeholder="请输入密码">
+        </div>
+        <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary" >确认</button>
+            <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+        </div>
+    </form>
+
+    <!--底部模块-->
+    <footer class="lt_footer">
+        <ul class="mui-clearfix">
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a class="now" href="index.html">
+                    <span class="fa fa-user"></span>
+                    <p  class="now">会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
 </body>
 </html>
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="js/common.js"></script>
