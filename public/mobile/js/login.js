@@ -46,7 +46,6 @@ $(function () {
             //跳转到会员中心
             location.href = "user.html";
           }
-
         }
       }
     });
