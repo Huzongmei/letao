@@ -28,4 +28,20 @@ $(function(){
             }
         }
     });
+
+    //给删除按钮注册点击事件
+    //$('.lt_content').on('tap','.btn_delete',function(){
+    //    var id = $(this).data('id');
+    //    console.log(id);
+    //    $.ajax({
+    //        type:'GET',
+    //        url:'/cart/deleteCart',
+    //        data:{id:id},
+    //        dataType:'json',
+    //        success:function(info){
+    //            console.log(info);
+    //        }
+    //    })
+    //});
+
 });
